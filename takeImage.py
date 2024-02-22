@@ -6,17 +6,18 @@ import datetime
 import time
 
 
-
 # take Image of user
-def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,text_to_speech):
-    if (l1 == "") and (l2==""):
-        t='Please Enter the your Enrollment Number and Name.'
+def TakeImage(
+    l1, l2, haarcasecade_path, trainimage_path, message, err_screen, text_to_speech
+):
+    if (l1 == "") and (l2 == ""):
+        t = "Please Enter the your Enrollment Number and Name."
         text_to_speech(t)
-    elif l1=='':
-        t='Please Enter the your Enrollment Number.'
+    elif l1 == "":
+        t = "Please Enter the your Enrollment Number."
         text_to_speech(t)
     elif l2 == "":
-        t='Please Enter the your Name.'
+        t = "Please Enter the your Name."
         text_to_speech(t)
     else:
         try:
@@ -32,7 +33,7 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,te
                 ret, img = cam.read()
                 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 faces = detector.detectMultiScale(gray, 1.3, 5)
-                for (x, y, w, h) in faces:
+                for x, y, w, h in faces:
                     cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
                     sampleNum = sampleNum + 1
                     cv2.imwrite(
@@ -54,7 +55,7 @@ def TakeImage(l1, l2, haarcasecade_path, trainimage_path, message, err_screen,te
             cv2.destroyAllWindows()
             row = [Enrollment, Name]
             with open(
-                "C:\\Users\\patel\\OneDrive\\Documents\\E\\FBAS\\StudentDetails\\studentdetails.csv",
+                "C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\\Attendance-Management-system-using-face-recognition\\StudentDetails\\studentdetails.csv",
                 "a+",
             ) as csvFile:
                 writer = csv.writer(csvFile, delimiter=",")

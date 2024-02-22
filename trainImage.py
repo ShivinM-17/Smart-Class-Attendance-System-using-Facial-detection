@@ -8,7 +8,9 @@ from PIL import ImageTk, Image
 
 
 # Train Image
-def TrainImage(haarcasecade_path, trainimage_path, trainimagelabel_path, message,text_to_speech):
+def TrainImage(
+    haarcasecade_path, trainimage_path, trainimagelabel_path, message, text_to_speech
+):
     recognizer = cv2.face.LBPHFaceRecognizer_create()
     detector = cv2.CascadeClassifier(haarcasecade_path)
     faces, Id = getImagesAndLables(trainimage_path)

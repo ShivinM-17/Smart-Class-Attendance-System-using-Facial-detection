@@ -18,6 +18,8 @@ Time = datetime.datetime.fromtimestamp(ts).strftime("%H:%M:%S")
 Hour, Minute, Second = timeStamp.split(":")
 d = {}
 index = 0
+
+
 ####GUI for manually fill attendance
 def manually_fill():
     global sb
@@ -182,7 +184,7 @@ def manually_fill():
             def create_csv():
                 df = pd.DataFrame(d)
                 csv_name = (
-                    "C:\\Users\\patel\\OneDrive\\Documents\\E\\FBAS\\Attendance(Manually)\\"
+                    "C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\\Attendance-Management-system-using-face-recognition\\Attendance(Manually)\\"
                     + subb
                     + "_"
                     + Date
@@ -294,12 +296,13 @@ def manually_fill():
                 font=("times", 15, " bold "),
             )
             MAKE_CSV.place(x=570, y=300)
+
             # TODO remove check sheet
             def attf():
                 import subprocess
 
                 subprocess.Popen(
-                    r'explorer /select,"C:/Users/patel/OneDrive/Documents/E/FBAS/Attendance(Manually)"'
+                    r'explorer /select,"C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\\Attendance-Management-system-using-face-recognition\\Attendance(Manually)"'
                 )
 
             attf = tk.Button(

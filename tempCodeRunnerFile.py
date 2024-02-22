@@ -1,0 +1,5 @@
+haarcasecade_path = "C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\\Attendance-Management-system-using-face-recognition\\haarcascade_frontalface_default.xml"
+trainimagelabel_path = "C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\\Attendance-Management-system-using-face-recognition\TrainingImageLabel\Trainner.yml"
+trainimage_path = "C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\\Attendance-Management-system-using-face-recognition\\TrainingImage"
+studentdetail_path = "C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\\Attendance-Management-system-using-face-recognition\\StudentDetails\\studentdetails.csv"
+attendance_path = "C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\Attendance-Management-system-using-face-recognition\\Attendance"

@@ -6,17 +6,18 @@ import csv
 import tkinter as tk
 from tkinter import *
 
+
 def subjectchoose(text_to_speech):
     def calculate_attendance():
         Subject = tx.get()
-        if Subject=="":
-            t='Please enter the subject name.'
+        if Subject == "":
+            t = "Please enter the subject name."
             text_to_speech(t)
         os.chdir(
-            f"C:\\Users\\patel\\OneDrive\\Documents\\E\\FBAS\\Attendance\\{Subject}"
+            f"C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\Attendance-Management-system-using-face-recognition\\Attendance\\{Subject}"
         )
         filenames = glob(
-            f"C:\\Users\\patel\\OneDrive\\Documents\\E\\FBAS\\Attendance\\{Subject}\\{Subject}*.csv"
+            f"C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\Attendance-Management-system-using-face-recognition\\Attendance\\{Subject}\\{Subject}*.csv"
         )
         df = [pd.read_csv(f) for f in filenames]
         newdf = df[0]
@@ -25,14 +26,16 @@ def subjectchoose(text_to_speech):
         newdf.fillna(0, inplace=True)
         newdf["Attendance"] = 0
         for i in range(len(newdf)):
-            newdf["Attendance"].iloc[i] = str(int(round(newdf.iloc[i, 2:-1].mean() * 100)))+'%'
-            #newdf.sort_values(by=['Enrollment'],inplace=True)
+            newdf["Attendance"].iloc[i] = (
+                str(int(round(newdf.iloc[i, 2:-1].mean() * 100))) + "%"
+            )
+            # newdf.sort_values(by=['Enrollment'],inplace=True)
         newdf.to_csv("attendance.csv", index=False)
 
         root = tkinter.Tk()
-        root.title("Attendance of "+Subject)
+        root.title("Attendance of " + Subject)
         root.configure(background="black")
-        cs = f"C:\\Users\\patel\\OneDrive\\Documents\\E\\FBAS\\Attendance\\{Subject}\\attendance.csv"
+        cs = f"C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\Attendance-Management-system-using-face-recognition\\Attendance\\{Subject}\\attendance.csv"
         with open(cs) as file:
             reader = csv.reader(file)
             r = 0
@@ -82,13 +85,12 @@ def subjectchoose(text_to_speech):
     def Attf():
         sub = tx.get()
         if sub == "":
-            t="Please enter the subject name!!!"
+            t = "Please enter the subject name!!!"
             text_to_speech(t)
         else:
             os.startfile(
-            f"C:\\Users\\patel\\OneDrive\\Documents\\E\\FBAS\\Attendance\\{sub}"
+                f"C:\\Users\\Shivin\\OneDrive\\Desktop\\class_attend_system\Attendance-Management-system-using-face-recognition\\Attendance\\{sub}"
             )
-
 
     attf = tk.Button(
         subject,
